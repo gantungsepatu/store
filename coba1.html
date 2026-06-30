@@ -7,20 +7,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* (Gunakan CSS yang sudah Anda miliki sebelumnya di sini) */
-        /* Tambahan untuk menyembunyikan section saat kategori dipilih */
-        .section-container { display: block; }
+        /* ... (Gunakan CSS Anda yang lama di sini, tidak ada yang diubah) ... */
+        
+        /* Tambahan agar saat berpindah kategori, transisi terasa halus */
+        .section-container { transition: opacity 0.3s ease; }
     </style>
 </head>
 <body>
 
 <div class="app-container">
-    <div class="dashboard-menu">
-        <a href="#semua" class="menu-item active"><i class="fas fa-home"></i> Beranda</a>
-        <a href="#populer" class="menu-item"><i class="fas fa-fire"></i> Terpopuler</a>
-        <a href="#baju" class="menu-item"><i class="fas fa-tshirt"></i> Baju</a>
-        <a href="#kesehatan" class="menu-item"><i class="fas fa-heartbeat"></i> Kesehatan</a>
+    <header class="hero-section">
+        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Banner" class="banner-img">
+        <div class="profile-box">
+            <img src="https://via.placeholder.com/150" alt="Avatar" class="avatar">
+            <div class="username">Gantung Sepatu <i class="fas fa-check-circle verified-badge"></i></div>
+            <div class="bio">@gantung_sepatu.id • Fashion Pria, Olahraga & Streetwear Original</div>
         </div>
+    </header>
+
+    <div class="social-bar">
+        <a href="https://www.instagram.com/gantung_sepatu.id/" class="social-btn" style="color: #E1306C;"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@gantungsepatu.id" class="social-btn" style="color: #ffffff;"><i class="fab fa-tiktok"></i></a>
+        <a href="https://web.facebook.com/profile.php?id=61591006389293" class="social-btn" style="color: #1877F2;"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/@GantungSepatu979" class="social-btn" style="color: #ff0000;"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <div class="dashboard-menu" id="mainMenu">
+        <a href="#semua" class="menu-item active" onclick="filterContent('semua', this)"><i class="fas fa-home"></i> Beranda</a>
+        <a href="#populer" class="menu-item" onclick="filterContent('populer', this)"><i class="fas fa-fire"></i> Terpopuler</a>
+        <a href="#baju" class="menu-item" onclick="filterContent('baju', this)"><i class="fas fa-tshirt"></i> Baju</a>
+        <a href="#kesehatan" class="menu-item" onclick="filterContent('kesehatan', this)"><i class="fas fa-heartbeat"></i> Kesehatan</a>
+    </div>
 
     <div class="section-container" id="populer">
         <h2 class="section-title"><i class="fas fa-crown"></i> Produk Populer</h2>
@@ -33,35 +50,33 @@
         <div class="product-grid">
             </div>
     </div>
+
+    <div class="section-container" id="kesehatan">
+        <h2 class="section-title"><i class="fas fa-heartbeat"></i> Perawatan & Kesehatan</h2>
+        <div class="product-grid">
+            </div>
+    </div>
 </div>
 
 <script>
-    // Logika untuk navigasi filter
-    const menuItems = document.querySelectorAll('.menu-item');
-    const sections = document.querySelectorAll('.section-container');
+    function filterContent(kategori, element) {
+        // 1. Ubah tombol yang aktif
+        document.querySelectorAll('.menu-item').forEach(btn => btn.classList.remove('active'));
+        element.classList.add('active');
 
-    menuItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            // Highlight tombol yang aktif
-            menuItems.forEach(i => i.classList.remove('active'));
-            item.classList.add('active');
-
-            const target = item.getAttribute('href').substring(1);
-
-            // Tampilkan/Sembunyikan konten
-            sections.forEach(sec => {
-                if (target === 'semua') {
-                    sec.style.display = 'block';
-                } else if (sec.id === target) {
-                    sec.style.display = 'block';
-                } else {
-                    sec.style.display = 'none';
-                }
-            });
+        // 2. Filter Tampilan
+        const sections = document.querySelectorAll('.section-container');
+        sections.forEach(sec => {
+            if (kategori === 'semua') {
+                sec.style.display = 'block';
+            } else {
+                sec.style.display = (sec.id === kategori) ? 'block' : 'none';
+            }
         });
-    });
+    }
+
+    // Optimasi: Tambahkan loading="lazy" ke semua gambar produk secara otomatis
+    document.querySelectorAll('img').forEach(img => img.setAttribute('loading', 'lazy'));
 </script>
 
 </body>
