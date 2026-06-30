@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gantung Sepatu | Official Hub</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Efek hover untuk seluruh kartu agar bisa diklik */
+        .card-link { transition: all 0.3s ease; cursor: pointer; }
+        .card-link:hover { transform: translateY(-5px); border-color: #3b82f6; }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans min-h-screen antialiased">
+
+    <main class="max-w-2xl w-full mx-auto px-4 py-12 flex flex-col items-center">
+        <div class="text-center mb-10">
+            <div class="w-32 h-32 bg-gradient-to-tr from-orange-500 to-blue-600 rounded-full p-1 mx-auto mb-4 shadow-xl">
+                <div class="w-full h-full bg-gray-900 rounded-full flex items-center justify-center overflow-hidden">
+                    <img src="logognt1.jpeg" alt="Logo" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <h1 class="text-3xl font-bold">Gantung Sepatu</h1>
+            <p class="text-gray-400">Content Creator • eFootball Store</p>
+        </div>
+
+        <div class="w-full space-y-4 mb-12">
+            <a href="https://shopee.co.id/URLLINKANDA" class="card-link flex items-center p-4 bg-gray-900 border border-gray-800 rounded-xl">
+                <i class="fa-solid fa-bag-shopping text-orange-500 mr-4 text-xl"></i>
+                <div>
+                    <p class="font-bold">Rekomendasi Shopee</p>
+                    <p class="text-xs text-gray-400">Racun produk pilihan</p>
+                </div>
+            </a>
+        </div>
+
+        <h2 class="text-xl font-bold mb-6 self-start border-l-4 border-blue-500 pl-3">Katalog Akun Premium</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+            
+            <div onclick="window.open('https://wa.me/NOMORWAANDA?text=Mau%20tanya%20akun%20Argentina')" 
+                 class="card-link bg-gray-900 border border-gray-800 rounded-xl p-4">
+                <div class="text-blue-500 text-2xl mb-2"><i class="fa-solid fa-ranking-star"></i></div>
+                <h3 class="font-bold">Argentina Pack</h3>
+                <p class="text-xs text-gray-400 mb-2">Skuad Full Booster Piala Dunia 2026</p>
+                <span class="text-sm text-blue-400 font-bold">Hubungi Admin</span>
+            </div>
+
+            <div onclick="window.open('https://wa.me/NOMORWAANDA?text=Mau%20tanya%20akun%20Portugal')" 
+                 class="card-link bg-gray-900 border border-gray-800 rounded-xl p-4">
+                <div class="text-blue-500 text-2xl mb-2"><i class="fa-solid fa-ranking-star"></i></div>
+                <h3 class="font-bold">Portugal '26</h3>
+                <p class="text-xs text-gray-400 mb-2">Cristiano Ronaldo (CF) Will Power</p>
+                <span class="text-sm text-blue-400 font-bold">Hubungi Admin</span>
+            </div>
+        </div>
+
+        <div class="flex space-x-6 mt-12 text-gray-400">
+            <a href="#"><i class="fa-brands fa-instagram text-2xl"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok text-2xl"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
+        </div>
+    </main>
+
+</body>
+</html>
