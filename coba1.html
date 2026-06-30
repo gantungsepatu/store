@@ -32,8 +32,8 @@
     <div class="dashboard-menu">
         <a href="#" class="menu-item active" onclick="filterContent('semua', this)"><i class="fas fa-home"></i> Beranda</a>
         <a href="#" class="menu-item" onclick="filterContent('populer', this)"><i class="fas fa-fire"></i> Terpopuler</a>
-        <a href="#" class="menu-item" onclick="filterContent('baju', this)"><i class="fas fa-tshirt"></i> Baju</a>
-        <a href="#" class="menu-item" onclick="filterContent('kesehatan', this)"><i class="fas fa-heartbeat"></i> Kesehatan</a>
+        <a href="#" class="menu-item" onclick="filterContent('baju', this)"><i class="fas fa-tshirt"></i> Jersey(Olahraga)</a>
+        <a href="#" class="menu-item" onclick="filterContent('kesehatan', this)"><i class="fas fa-heartbeat"></i> Titipan Istri</a>
     </div>
 
     <div class="section-container" id="populer">
@@ -42,20 +42,68 @@
             <a href="LINK_SHOPEE_ANDA" class="product-card" target="_blank">
                 <div class="img-wrapper"><span class="badge-hot">TERLARIS</span><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="product-img"></div>
                 <div class="product-info"><div class="product-name">Sepatu Sneakers Olahraga Pria Merah</div><div class="btn-buy">Beli di Shopee</div></div>
+ /* Efek saat kursor diarahkan ke kartu (Hover) */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02); /* Produk sedikit naik dan membesar */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Bayangan jadi lebih tebal */
+    border-color: var(--shopee-orange); /* Garis tepi berubah warna */
+}
+
+/* Efek saat kartu diklik (Active) */
+.product-card:active {
+    transform: scale(0.95); /* Kartu sedikit mengecil saat ditekan */
+    transition: transform 0.1s;
+}
             </a>
             <a href="https://s.shopee.co.id/70IASVsThU?share_channel_code=1" class="product-card" target="_blank">
                 <div class="img-wrapper"><span class="badge-hot" style="background:#8b5cf6;">VIRAL</span><img src="asset/argentinaaway2026.jpeg" class="product-img"></div>
                 <div class="product-info"><div class="product-name">Jersey Away Argentina 2026</div><div class="btn-buy">Beli di Shopee</div></div>
+ /* Efek saat kursor diarahkan ke kartu (Hover) */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02); /* Produk sedikit naik dan membesar */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Bayangan jadi lebih tebal */
+    border-color: var(--shopee-orange); /* Garis tepi berubah warna */
+}
+
+/* Efek saat kartu diklik (Active) */
+.product-card:active {
+    transform: scale(0.95); /* Kartu sedikit mengecil saat ditekan */
+    transition: transform 0.1s;
+}
             </a>
         </div>
     </div>
 
     <div class="section-container" id="baju">
-        <h2 class="section-title"><i class="fas fa-tshirt"></i> Koleksi Baju Pria</h2>
+        <h2 class="section-title"><i class="fas fa-tshirt"></i> Jersey(Olahraga)</h2>
         <div class="product-grid">
             <a href="LINK_SHOPEE_ANDA" class="product-card" target="_blank">
                 <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="product-img"></div>
                 <div class="product-info"><div class="product-name">Kemeja Polos Kasual Lengan Pendek</div><div class="btn-buy">Beli di Shopee</div></div>
+                /* Efek saat kursor diarahkan ke kartu (Hover) */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02); /* Produk sedikit naik dan membesar */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Bayangan jadi lebih tebal */
+    border-color: var(--shopee-orange); /* Garis tepi berubah warna */
+}
+
+/* Efek saat kartu diklik (Active) */
+.product-card:active {
+    transform: scale(0.95); /* Kartu sedikit mengecil saat ditekan */
+    transition: transform 0.1s;
+}
             </a>
             <a href="LINK_SHOPEE_ANDA" class="product-card" target="_blank">
                 <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="product-img"></div>
@@ -65,15 +113,47 @@
     </div>
 
     <div class="section-container" id="kesehatan">
-        <h2 class="section-title"><i class="fas fa-heartbeat"></i> Perawatan & Kesehatan</h2>
+        <h2 class="section-title"><i class="fas fa-heartbeat"></i> Titipan Istri</h2>
         <div class="product-grid">
             <a href="LINK_SHOPEE_ANDA" class="product-card" target="_blank">
                 <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="product-img"></div>
                 <div class="product-info"><div class="product-name">Masker Medis Premium 3-Ply</div><div class="btn-buy">Beli di Shopee</div></div>
+        /* Efek saat kursor diarahkan ke kartu (Hover) */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02); /* Produk sedikit naik dan membesar */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Bayangan jadi lebih tebal */
+    border-color: var(--shopee-orange); /* Garis tepi berubah warna */
+}
+
+/* Efek saat kartu diklik (Active) */
+.product-card:active {
+    transform: scale(0.95); /* Kartu sedikit mengecil saat ditekan */
+    transition: transform 0.1s;
+}
             </a>
             <a href="LINK_SHOPEE_ANDA" class="product-card" target="_blank">
                 <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1550572017-edb799049e6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="product-img"></div>
                 <div class="product-info"><div class="product-name">Suplemen Vitamin C 1000mg + Zinc</div><div class="btn-buy">Beli di Shopee</div></div>
+ /* Efek saat kursor diarahkan ke kartu (Hover) */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02); /* Produk sedikit naik dan membesar */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Bayangan jadi lebih tebal */
+    border-color: var(--shopee-orange); /* Garis tepi berubah warna */
+}
+
+/* Efek saat kartu diklik (Active) */
+.product-card:active {
+    transform: scale(0.95); /* Kartu sedikit mengecil saat ditekan */
+    transition: transform 0.1s;
+}
             </a>
         </div>
     </div>
@@ -89,79 +169,5 @@
     }
 </script>
 
-</body> /* ================= Desain Kartu Produk (Kaca/Glassmorphism) ================= */
-        .product-card {
-            background: var(--bg-card);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-            position: relative;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            flex-direction: column;
-        }
-        .product-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: var(--shopee-orange);
-            box-shadow: 0 10px 25px rgba(255, 102, 0, 0.2);
-        }
-        .img-wrapper { position: relative; width: 100%; aspect-ratio: 1/1; }
-        .product-img { width: 100%; height: 100%; object-fit: cover; }
-        
-        /* Label Diskon / Bestseller */
-        .badge-hot {
-            position: absolute;
-            top: 10px; right: 10px;
-            background: #ef4444; color: white;
-            padding: 4px 8px; border-radius: 8px;
-            font-size: 0.7rem; font-weight: 700;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-        }
-
-        .product-info { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .product-name { font-size: 0.9rem; font-weight: 600; line-height: 1.4; margin-bottom: 5px; }
-        .rating { color: #fbbf24; font-size: 0.75rem; margin-bottom: 10px; }
-        
-        /* Tombol Beli */
-        .btn-buy {
-            width: 100%;
-            background: var(--shopee-grad);
-            color: white;
-            text-align: center;
-            padding: 8px 0;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            transition: 0.3s;
-        }
-        .btn-buy:hover { box-shadow: 0 0 15px rgba(255, 102, 0, 0.5); }
-
-        /* ================= Floating Chat ================= */
-        .floating-wa {
-            position: fixed; bottom: 20px; right: 20px;
-            width: 60px; height: 60px;
-            background-color: #25D366; color: white;
-            border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            font-size: 2rem;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
-            z-index: 1000;
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-    </style>
-</head>
-<body>
-
-<div class="app-container">
-
+</body>
 </html>
