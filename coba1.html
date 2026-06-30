@@ -8,13 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* === RESET & VARIABEL === */
         :root { --bg-dark: #0f172a; --bg-card: rgba(30, 41, 59, 0.7); --shopee-orange: #ff6600; --shopee-grad: linear-gradient(135deg, #ff6600, #ff4500); --glass-border: rgba(255, 255, 255, 0.1); --text-main: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background-color: var(--bg-dark); color: var(--text-main); padding-bottom: 80px; }
         a { text-decoration: none; color: inherit; }
-        .app-container { max-width: 800px; margin: 0 auto; min-height: 100vh; }
-
+        .app-container { max-width: 800px; margin: 0 auto; }
+        
         /* === HEADER === */
         .hero-section { position: relative; padding-bottom: 20px; }
         .banner-img { width: 100%; height: 200px; object-fit: cover; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; }
@@ -23,30 +22,24 @@
         .username { font-size: 1.5rem; font-weight: 800; margin-top: 10px; }
         .bio { color: #94a3b8; font-size: 0.9rem; text-align: center; margin-bottom: 20px; }
 
-        /* === NAVIGASI (DENGAN WARNA BARU) === */
+        /* === NAVIGASI === */
         .dashboard-menu { display: flex; justify-content: center; gap: 10px; padding: 20px; flex-wrap: wrap; }
-        .menu-item { 
-            display: flex; align-items: center; gap: 8px; padding: 10px 20px; 
-            background: var(--bg-card); border: 1px solid var(--glass-border); 
-            border-radius: 30px; font-size: 0.85rem; font-weight: 600; 
-            cursor: pointer; white-space: nowrap; backdrop-filter: blur(10px);
-            color: #ffffff; text-decoration: none; transition: 0.3s;
-        }
-        .menu-item.active { background: var(--shopee-grad); border: none; color: #ffffff; }
-        .menu-item:hover { color: #ffffff; border-color: var(--shopee-orange); }
-        
-        /* === PRODUK & ANIMASI === */
+        .menu-item { padding: 10px 20px; background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 30px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: 0.3s; color: #ffffff; text-decoration: none; backdrop-filter: blur(10px); }
+        .menu-item.active { background: var(--shopee-grad); border: none; }
+        .menu-item:hover { border-color: var(--shopee-orange); }
+
+        /* === PRODUK === */
         .section-container { padding: 0 20px; margin-bottom: 40px; }
         .section-title { font-size: 1.2rem; margin-bottom: 15px; border-left: 4px solid var(--shopee-orange); padding-left: 10px; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; }
         .product-card { background: var(--bg-card); border-radius: 16px; overflow: hidden; display: block; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid var(--glass-border); }
         .product-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 15px 30px rgba(0,0,0,0.4); border-color: var(--shopee-orange); }
-        .product-card:active { transform: scale(0.95); transition: transform 0.1s; }
         .img-wrapper { position: relative; aspect-ratio: 1/1; }
         .product-img { width: 100%; height: 100%; object-fit: cover; }
         .badge-hot { position: absolute; top: 10px; right: 10px; background: #ef4444; color: white; padding: 4px 8px; border-radius: 8px; font-size: 0.7rem; font-weight: 700; }
         .product-info { padding: 15px; }
-        .btn-buy { width: 100%; background: var(--shopee-grad); text-align: center; padding: 8px; border-radius: 8px; font-weight: 700; margin-top: 10px; }
+        .product-name { font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; }
+        .btn-buy { width: 100%; background: var(--shopee-grad); text-align: center; padding: 8px; border-radius: 8px; font-weight: 700; }
     </style>
 </head>
 <body>
@@ -62,16 +55,34 @@
     </header>
 
     <div class="dashboard-menu">
-        <a href="#" class="menu-item active" onclick="filterContent('semua', this)"><i class="fas fa-home"></i> Beranda</a>
-        <a href="#" class="menu-item" onclick="filterContent('populer', this)"><i class="fas fa-fire"></i> Terpopuler</a>
-        <a href="#" class="menu-item" onclick="filterContent('baju', this)"><i class="fas fa-tshirt"></i> Jersey</a>
-        <a href="#" class="menu-item" onclick="filterContent('kesehatan', this)"><i class="fas fa-heartbeat"></i> Titipan Istri</a>
+        <a href="#" class="menu-item active" onclick="filterContent('semua', this)">Beranda</a>
+        <a href="#" class="menu-item" onclick="filterContent('populer', this)">Terpopuler</a>
+        <a href="#" class="menu-item" onclick="filterContent('baju', this)">Jersey(Olahraga)</a>
+        <a href="#" class="menu-item" onclick="filterContent('kesehatan', this)">Titipan Istri</a>
     </div>
 
+    <!-- SEMUA PRODUK -->
     <div class="section-container" id="populer">
         <h2 class="section-title">Produk Populer</h2>
         <div class="product-grid">
-            <a href="#" class="product-card"><div class="img-wrapper"><span class="badge-hot">TERLARIS</span><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" class="product-img"></div><div class="product-info"><div class="btn-buy">Beli di Shopee</div></div></a>
+            <a href="#" class="product-card"><div class="img-wrapper"><span class="badge-hot">TERLARIS</span><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" class="product-img"></div><div class="product-info"><div class="product-name">Sepatu Sneakers Pria Merah</div><div class="btn-buy">Beli di Shopee</div></div></a>
+            <a href="#" class="product-card"><div class="img-wrapper"><span class="badge-hot" style="background:#8b5cf6;">VIRAL</span><img src="asset/argentinaaway2026.jpeg" class="product-img"></div><div class="product-info"><div class="product-name">Jersey Away Argentina 2026</div><div class="btn-buy">Beli di Shopee</div></div></a>
+        </div>
+    </div>
+
+    <div class="section-container" id="baju">
+        <h2 class="section-title">Jersey(Olahraga)</h2>
+        <div class="product-grid">
+            <a href="#" class="product-card"><div class="img-wrapper"><img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf" class="product-img"></div><div class="product-info"><div class="product-name">Kemeja Polos Kasual</div><div class="btn-buy">Beli di Shopee</div></div></a>
+            <a href="#" class="product-card"><div class="img-wrapper"><img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27" class="product-img"></div><div class="product-info"><div class="product-name">Kaos Oversize Hitam</div><div class="btn-buy">Beli di Shopee</div></div></a>
+        </div>
+    </div>
+
+    <div class="section-container" id="kesehatan">
+        <h2 class="section-title">Titipan Istri</h2>
+        <div class="product-grid">
+            <a href="#" class="product-card"><div class="img-wrapper"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae" class="product-img"></div><div class="product-info"><div class="product-name">Masker Medis Premium</div><div class="btn-buy">Beli di Shopee</div></div></a>
+            <a href="#" class="product-card"><div class="img-wrapper"><img src="https://images.unsplash.com/photo-1550572017-edb799049e6f" class="product-img"></div><div class="product-info"><div class="product-name">Suplemen Vitamin C</div><div class="btn-buy">Beli di Shopee</div></div></a>
         </div>
     </div>
 </div>
