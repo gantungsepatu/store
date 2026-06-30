@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@gantungsepatu - Premium Affiliate Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* (Gunakan CSS yang sudah Anda miliki sebelumnya di sini) */
+        /* Tambahan untuk menyembunyikan section saat kategori dipilih */
+        .section-container { display: block; }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <div class="dashboard-menu">
+        <a href="#semua" class="menu-item active"><i class="fas fa-home"></i> Beranda</a>
+        <a href="#populer" class="menu-item"><i class="fas fa-fire"></i> Terpopuler</a>
+        <a href="#baju" class="menu-item"><i class="fas fa-tshirt"></i> Baju</a>
+        <a href="#kesehatan" class="menu-item"><i class="fas fa-heartbeat"></i> Kesehatan</a>
+        </div>
+
+    <div class="section-container" id="populer">
+        <h2 class="section-title"><i class="fas fa-crown"></i> Produk Populer</h2>
+        <div class="product-grid">
+            </div>
+    </div>
+
+    <div class="section-container" id="baju">
+        <h2 class="section-title"><i class="fas fa-tshirt"></i> Koleksi Baju Pria</h2>
+        <div class="product-grid">
+            </div>
+    </div>
+</div>
+
+<script>
+    // Logika untuk navigasi filter
+    const menuItems = document.querySelectorAll('.menu-item');
+    const sections = document.querySelectorAll('.section-container');
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Highlight tombol yang aktif
+            menuItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+
+            const target = item.getAttribute('href').substring(1);
+
+            // Tampilkan/Sembunyikan konten
+            sections.forEach(sec => {
+                if (target === 'semua') {
+                    sec.style.display = 'block';
+                } else if (sec.id === target) {
+                    sec.style.display = 'block';
+                } else {
+                    sec.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
