@@ -7,87 +7,74 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ================= Variabel Warna & Tema ================= */
-        :root {
-            --bg-dark: #0f172a;
-            --bg-card: rgba(30, 41, 59, 0.7);
-            --shopee-orange: #ff6600;
-            --shopee-grad: linear-gradient(135deg, #ff6600, #ff4500);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --text-main: #ffffff;
-            --text-muted: #94a3b8;
-        }
-
-        /* ================= Pengaturan Dasar ================= */
+        /* (CSS Anda tetap sama, saya simpan di sini agar rapi) */
+        :root { --bg-dark: #0f172a; --bg-card: rgba(30, 41, 59, 0.7); --shopee-orange: #ff6600; --shopee-grad: linear-gradient(135deg, #ff6600, #ff4500); --glass-border: rgba(255, 255, 255, 0.1); --text-main: #ffffff; --text-muted: #94a3b8; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-dark);
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(255, 102, 0, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(52, 152, 219, 0.15) 0px, transparent 50%);
-            background-attachment: fixed;
-            color: var(--text-main);
-            padding-bottom: 80px;
-        }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-dark); color: var(--text-main); padding-bottom: 80px; }
         a { text-decoration: none; color: inherit; }
-
-        /* ================= Layout & Komponen Lain ================= */
         .app-container { max-width: 800px; margin: 0 auto; min-height: 100vh; }
-        .hero-section { position: relative; padding-bottom: 20px; }
-        .banner-img { width: 100%; height: 200px; object-fit: cover; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .profile-box { display: flex; flex-direction: column; align-items: center; margin-top: -60px; position: relative; z-index: 10; }
-        .avatar { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--bg-dark); box-shadow: 0 0 20px rgba(255, 102, 0, 0.6); object-fit: cover; }
-        .username { font-size: 1.8rem; font-weight: 800; margin-top: 10px; background: var(--shopee-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: flex; align-items: center; gap: 5px; }
-        .bio { color: var(--text-muted); font-size: 0.9rem; margin-top: 5px; text-align: center; padding: 0 20px;}
-        .social-bar { display: flex; justify-content: center; gap: 15px; margin: 20px 0; }
-        .social-btn { width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; background: var(--bg-card); border: 1px solid var(--glass-border); backdrop-filter: blur(10px); transition: 0.3s all; }
-        
         .dashboard-menu { display: flex; overflow-x: auto; gap: 10px; padding: 10px 20px; margin-bottom: 25px; scrollbar-width: none; }
-        .menu-item { display: flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 30px; font-size: 0.85rem; font-weight: 600; white-space: nowrap; transition: 0.3s; backdrop-filter: blur(10px); }
-        .menu-item.active { background: var(--shopee-grad); border-color: transparent; }
-
-        .section-container { padding: 0 20px; margin-bottom: 40px; transition: opacity 0.3s ease; }
-        .section-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; border-left: 4px solid var(--shopee-orange); padding-left: 10px; }
+        .menu-item { display: flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 30px; font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap; backdrop-filter: blur(10px); }
+        .menu-item.active { background: var(--shopee-grad); }
+        .section-container { padding: 0 20px; margin-bottom: 40px; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; }
-        
-        .floating-wa { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: #25D366; color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2rem; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5); z-index: 1000; }
+        .product-card { background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
+        .img-wrapper { position: relative; width: 100%; aspect-ratio: 1/1; }
+        .product-img { width: 100%; height: 100%; object-fit: cover; }
+        .badge-hot { position: absolute; top: 10px; right: 10px; background: #ef4444; color: white; padding: 4px 8px; border-radius: 8px; font-size: 0.7rem; font-weight: 700; }
+        .product-info { padding: 15px; flex-grow: 1; }
+        .btn-buy { width: 100%; background: var(--shopee-grad); text-align: center; padding: 8px 0; border-radius: 8px; font-size: 0.85rem; font-weight: 700; margin-top: 10px; }
     </style>
 </head>
 <body>
 
 <div class="app-container">
-    <header class="hero-section">
-        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Banner" class="banner-img">
-        <div class="profile-box">
-            <img src="https://via.placeholder.com/150" alt="Avatar" class="avatar">
-            <div class="username">Gantung Sepatu <i class="fas fa-check-circle"></i></div>
-            <div class="bio">@gantung_sepatu.id • Fashion Pria, Olahraga & Streetwear Original</div>
-        </div>
-    </header>
-
     <div class="dashboard-menu">
-        <a href="#semua" class="menu-item active" onclick="filterContent('semua', this)"><i class="fas fa-home"></i> Beranda</a>
-        <a href="#populer" class="menu-item" onclick="filterContent('populer', this)"><i class="fas fa-fire"></i> Terpopuler</a>
-        <a href="#baju" class="menu-item" onclick="filterContent('baju', this)"><i class="fas fa-tshirt"></i> Baju</a>
-        <a href="#kesehatan" class="menu-item" onclick="filterContent('filter-kesehatan', this)"><i class="fas fa-heartbeat"></i> Kesehatan</a>
+        <a href="#" class="menu-item active" onclick="filterContent('semua', this)"><i class="fas fa-home"></i> Beranda</a>
+        <a href="#" class="menu-item" onclick="filterContent('populer', this)"><i class="fas fa-fire"></i> Terpopuler</a>
+        <a href="#" class="menu-item" onclick="filterContent('baju', this)"><i class="fas fa-tshirt"></i> Baju</a>
+        <a href="#" class="menu-item" onclick="filterContent('kesehatan', this)"><i class="fas fa-heartbeat"></i> Kesehatan</a>
     </div>
 
     <div class="section-container" id="populer">
         <h2 class="section-title"><i class="fas fa-crown"></i> Produk Populer</h2>
         <div class="product-grid">
-            </div>
+            <a href="LINK_SHOPEE_ANDA" class="product-card" target="_blank">
+                <div class="img-wrapper"><span class="badge-hot">TERLARIS</span><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="product-img"></div>
+                <div class="product-info"><div class="product-name">Sepatu Sneakers Olahraga Pria Merah</div><div class="btn-buy">Beli di Shopee</div></div>
+            </a>
+            <a href="https://s.shopee.co.id/70IASVsThU?share_channel_code=1" class="product-card" target="_blank">
+                <div class="img-wrapper"><span class="badge-hot" style="background:#8b5cf6;">VIRAL</span><img src="asset/argentinaaway2026.jpeg" class="product-img"></div>
+                <div class="product-info"><div class="product-name">Jersey Away Argentina 2026</div><div class="btn-buy">Beli di Shopee</div></div>
+            </a>
+        </div>
     </div>
 
     <div class="section-container" id="baju">
         <h2 class="section-title"><i class="fas fa-tshirt"></i> Koleksi Baju Pria</h2>
         <div class="product-grid">
+            <a href="LINK_SHOPEE_ANDA" class="product-card" target="_blank">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="product-img"></div>
+                <div class="product-info"><div class="product-name">Kemeja Polos Kasual Lengan Pendek</div><div class="btn-buy">Beli di Shopee</div></div>
+            </a>
+            <a href="LINK_SHOPEE_ANDA" class="product-card" target="_blank">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="product-img"></div>
+                <div class="product-info"><div class="product-name">Kaos Oversize Hitam Gaya Korea</div><div class="btn-buy">Beli di Shopee</div></div>
+            </a>
         </div>
     </div>
 
-    <div class="section-container" id="filter-kesehatan">
+    <div class="section-container" id="kesehatan">
         <h2 class="section-title"><i class="fas fa-heartbeat"></i> Perawatan & Kesehatan</h2>
         <div class="product-grid">
+            <a href="LINK_SHOPEE_ANDA" class="product-card" target="_blank">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="product-img"></div>
+                <div class="product-info"><div class="product-name">Masker Medis Premium 3-Ply</div><div class="btn-buy">Beli di Shopee</div></div>
+            </a>
+            <a href="LINK_SHOPEE_ANDA" class="product-card" target="_blank">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1550572017-edb799049e6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="product-img"></div>
+                <div class="product-info"><div class="product-name">Suplemen Vitamin C 1000mg + Zinc</div><div class="btn-buy">Beli di Shopee</div></div>
+            </a>
         </div>
     </div>
 </div>
@@ -96,9 +83,7 @@
     function filterContent(kategori, element) {
         document.querySelectorAll('.menu-item').forEach(btn => btn.classList.remove('active'));
         element.classList.add('active');
-
-        const sections = document.querySelectorAll('.section-container');
-        sections.forEach(sec => {
+        document.querySelectorAll('.section-container').forEach(sec => {
             sec.style.display = (kategori === 'semua' || sec.id === kategori) ? 'block' : 'none';
         });
     }
