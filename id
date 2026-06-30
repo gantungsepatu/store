@@ -20,7 +20,7 @@
             <div class="w-32 h-32 bg-gradient-to-tr from-orange-500 to-blue-600 rounded-full p-1 mx-auto mb-4 shadow-xl shadow-orange-500/10">
                 <div class="w-full h-full bg-gray-900 rounded-full flex items-center justify-center overflow-hidden p-2">
                     <!-- INTEGRASI LOGO: Ganti 'logo.png' dengan nama/path file logo transparan Anda -->
-                    <img src="logogantung.png" alt="Logo Gantung Sepatu" class="w-full h-full object-contain">
+                    <img src="logognt1.jpeg" alt="Logo Gantung Sepatu" class="w-full h-full object-contain">
                 </div>
             </div>
             <h1 class="text-2xl font-bold tracking-tight">Gantung Sepatu</h1>
